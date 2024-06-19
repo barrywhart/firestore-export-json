@@ -4,4 +4,5 @@ protobuf==4.23.2
 ruamel.yaml==0.17.29
 six==1.16.0
 urllib3==1.26.18
+google-cloud-storage==2.17.0
 google-crc32c==1.5.0
