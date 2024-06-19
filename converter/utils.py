@@ -1,4 +1,4 @@
-from base64 import b64decode
+from base64 import b64encode, b64decode
 import calendar
 import datetime
 from typing import Dict
@@ -74,4 +74,6 @@ def serialize_json(obj):
             obj = obj - obj.utcoffset()
         millis = int(calendar.timegm(obj.timetuple()) * 1000 + obj.microsecond / 1000)
         return millis
+    elif isinstance(obj, bytes):
+        return b64encode(obj).decode('utf-8')
     return str(obj)
